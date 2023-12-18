@@ -23,6 +23,22 @@ async def signup(
     user: schemas.UserCreate,
     db: Session = Depends(database.get_db)
 ):
+    """
+    Endpoint to register a new user.
+
+    Args:
+    - user (schemas.UserCreate): User creation data.
+    - db (Session): Database session.
+
+    Returns:
+    - JSONResponse: Response containing user details and status message.
+
+    Raises:
+    - HTTPException: If the email is already registered.
+
+    Example:
+    - To register a new user, send a POST request with user data to /signup.
+        """
     existing_user = db.query(models.Users).filter(models.Users.email == user.email).first()
     if existing_user:
 
