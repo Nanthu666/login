@@ -1,0 +1,7 @@
+fastapi==0.88.0
+uvicorn[standard]
+uvicorn
+psycopg2-binary
+sqlalchemy
+fastapi-login
+pydantic[email]
