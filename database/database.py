@@ -26,7 +26,7 @@ def create_user(db: Session, user_data: schemas.UserCreate):
     db_user = models.Users(
         email=user_data.email,
         username=user_data.username,
-        password=password,
+        password=user_data.password,
         first_name=user_data.first_name,
         last_name=user_data.last_name,
     )
